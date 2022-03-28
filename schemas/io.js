@@ -1,5 +1,9 @@
 const {
-  tiposDeConexao, classesDeConsumo, modalidadesTarifarias, cpf, cnpj,
+  tiposDeConexao,
+  classesDeConsumo,
+  modalidadesTarifarias,
+  cpf,
+  cnpj,
 } = require('./types');
 
 const enumOf = (values) => ({

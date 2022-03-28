@@ -3,7 +3,7 @@ function average(array) { // helper no mesmo arquivo da classe?
   return avg / array.length;
 }
 
-export default class ClientValidator { // é um uso digno pra classe? ou uma função resolve?
+class ClientValidator { // é um uso digno pra classe? ou uma função resolve?
   #report;
 
   constructor(rules) {
@@ -19,40 +19,42 @@ export default class ClientValidator { // é um uso digno pra classe? ou uma fun
     }
   }
 
-  #checkClass(input) {
-    if (!this.rules.eligibleClasses.includes(input.classeDeConsumo)) {
+  #checkClass(data) {
+    if (!this.rules.eligibleClasses.includes(data.classeDeConsumo)) {
       this.#report.elegivel = false;
       this.#addMotive(this.rules.inelegMsgs.class);
     }
   }
 
-  #checkBillingModel(input) {
-    if (!this.rules.eligibleBillingModels.includes(input.modalidadeTarifaria)) {
+  #checkBillingModel(data) {
+    if (!this.rules.eligibleBillingModels.includes(data.modalidadeTarifaria)) {
       this.#report.elegivel = false;
       this.#addMotive(this.rules.inelegMsgs.billingModel);
     }
   }
 
-  #checkConsumption(input) {
-    if (average(input.historicoDeConsumo) < this.rules.minConsumption[input.tipoDeConexao]) {
+  #checkConsumption(data) {
+    if (average(data.historicoDeConsumo) < this.rules.minConsumption[data.tipoDeConexao]) {
       this.#report.elegivel = false;
       this.#addMotive(this.rules.inelegMsgs.consumption);
     }
   }
 
-  #calculateCO2Savings(input) {
-    const savings = average(input.historicoDeConsumo) * 12 * this.rules.CO2PerKWh;
+  #calculateCO2Savings(data) {
+    const savings = average(data.historicoDeConsumo) * 12 * this.rules.CO2PerKWh;
     this.#report.economiaAnualDeCO2 = savings.toFixed(2);
   }
 
-  validate(input) {
+  validate(data) {
     // mandar o input inteiro pra cada metodo ou ja depenar antes?
-    this.#checkClass(input);
-    this.#checkBillingModel(input);
-    this.#checkConsumption(input);
+    this.#checkClass(data);
+    this.#checkBillingModel(data);
+    this.#checkConsumption(data);
     if (this.#report.elegivel) {
-      this.#calculateCO2Savings(input);
+      this.#calculateCO2Savings(data);
     }
     return this.#report;
   }
 }
+
+module.exports = ClientValidator;
