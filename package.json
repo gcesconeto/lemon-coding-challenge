@@ -1,0 +1,25 @@
+{
+  "name": "lemon-coding-challenge",
+  "version": "1.0.0",
+  "description": "./src/index.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcesconeto/lemon-coding-challenge.git"
+  },
+  "keywords": [],
+  "author": "Guilherme Cesconeto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gcesconeto/lemon-coding-challenge/issues"
+  },
+  "homepage": "https://github.com/gcesconeto/lemon-coding-challenge#readme",
+  "devDependencies": {
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  }
+}
