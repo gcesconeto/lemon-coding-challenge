@@ -1,31 +1,31 @@
 const cpf = {
-    type: 'string',
-    pattern: '^\\d{11}$',
-    example: '21554495008',
-}
+  type: 'string',
+  pattern: '^\\d{11}$',
+  example: '21554495008',
+};
 
 const cnpj = {
-    type: 'string',
-    pattern: '^\\d{14}$',
-    example: '33400689000109',
-}
+  type: 'string',
+  pattern: '^\\d{14}$',
+  example: '33400689000109',
+};
 
-const tiposDeConexao = ['monofasico', 'bifasico', 'trifasico']
+const tiposDeConexao = ['monofasico', 'bifasico', 'trifasico'];
 
 const classesDeConsumo = [
-    'residencial',
-    'industrial',
-    'comercial',
-    'rural',
-    'poderPublico',
-]
+  'residencial',
+  'industrial',
+  'comercial',
+  'rural',
+  'poderPublico',
+];
 
-const modalidadesTarifarias = ['azul', 'branca', 'verde', 'convencional']
+const modalidadesTarifarias = ['azul', 'branca', 'verde', 'convencional'];
 
 module.exports = {
-    cpf,
-    cnpj,
-    tiposDeConexao,
-    classesDeConsumo,
-    modalidadesTarifarias,
-}
+  cpf,
+  cnpj,
+  tiposDeConexao,
+  classesDeConsumo,
+  modalidadesTarifarias,
+};
