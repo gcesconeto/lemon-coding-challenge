@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node .",
     "test": "jest",
-    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
+    "lint": "eslint ."
+  },
+  "jest": {
+    "transform": {}
   },
   "repository": {
     "type": "git",
@@ -15,9 +18,6 @@
   "keywords": [],
   "author": "Guilherme Cesconeto",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gcesconeto/lemon-coding-challenge/issues"
-  },
   "homepage": "https://github.com/gcesconeto/lemon-coding-challenge#readme",
   "devDependencies": {
     "@babel/core": "^7.17.8",
