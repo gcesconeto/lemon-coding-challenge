@@ -1,18 +1,18 @@
 const Ajv = require('ajv');
-const rules = require('./rules/rules');
-const ValidatorClass = require('./clientValidator');
-const { input } = require('./schemas/io');
+const rules = require('./checkEligibility/rules');
+const CheckEligibility = require('./checkEligibility');
+const { input } = require('./validateFormat/schemas/io');
 
-const clientValidator = new ValidatorClass(rules);
+const checkEligibility = new CheckEligibility(rules);
 
 const ajv = new Ajv({ strict: false });
-const inputValidator = ajv.compile(input);
+const validateFormat = ajv.compile(input);
 
 function validateClient(data) {
-  if (inputValidator(data)) {
-    return clientValidator.validate(data);
+  if (validateFormat(data)) {
+    return checkEligibility.check(data);
   }
-  return inputValidator.errors;
+  return validateFormat.errors;
 }
 
 module.exports = validateClient;
