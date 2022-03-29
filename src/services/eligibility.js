@@ -1,5 +1,5 @@
 const rules = require('./checkEligibility/rules');
-const CheckEligibility = require('./checkEligibility');
+const CheckEligibility = require('./checkEligibility/CheckEligibility');
 
 const checkEligibility = new CheckEligibility(rules);
 

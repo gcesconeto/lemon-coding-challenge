@@ -1,4 +1,4 @@
-const CheckEligibility = require('../services/checkEligibility');
+const CheckEligibility = require('../services/checkEligibility/CheckEligibility');
 const rules = require('../services/checkEligibility/rules');
 const { input, output } = require('./checkEligibilityData');
 
