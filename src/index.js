@@ -1,7 +1,7 @@
 const Ajv = require('ajv');
-const rules = require('../rules/rules');
+const rules = require('./rules/rules');
 const ValidatorClass = require('./clientValidator');
-const { input } = require('../schemas/io');
+const { input } = require('./schemas/io');
 
 const clientValidator = new ValidatorClass(rules);
 
