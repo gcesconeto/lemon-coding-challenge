@@ -3,12 +3,11 @@ function average(array) {
   return avg / array.length;
 }
 
-class checkEligibility {
+class CheckEligibility {
   #report;
 
   constructor(data) {
     this.data = data;
-    this.#report = { elegivel: true };
   }
 
   #addReason(reason) {
@@ -45,7 +44,8 @@ class checkEligibility {
     this.#report.economiaAnualDeCO2 = savings.toFixed(2);
   }
 
-  validate(input) {
+  check(input) {
+    this.#report = { elegivel: true };
     this.#checkClass(input);
     this.#checkBillingModel(input);
     this.#checkConsumption(input);
@@ -56,4 +56,4 @@ class checkEligibility {
   }
 }
 
-module.exports = checkEligibility;
+module.exports = CheckEligibility;

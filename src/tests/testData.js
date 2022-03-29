@@ -4,7 +4,7 @@ function populateConsumption(minConsumption, offset) {
   return new Array(12).fill(minConsumption + offset);
 }
 
-module.exports = {
+const input = {
   eligible: {
     tipoDeConexao: rules.eligibleConnectionTypes[0],
     classeDeConsumo: rules.eligibleClasses[0],
@@ -48,3 +48,32 @@ module.exports = {
       populateConsumption(rules.minConsumption.trifasico, -1),
   },
 };
+
+const output = {
+  eligible: {
+    elegivel: true,
+    economiaAnualDeCO2: '404.21',
+  },
+  inelegibleClass: {
+    elegivel: false,
+    razoesDeInelegibilidade: [rules.reasons.class],
+  },
+  inelegibleBillingModel: {
+    elegivel: false,
+    razoesDeInelegibilidade: [rules.reasons.billingModel],
+  },
+  inelegibleMonoConsumption: {
+    elegivel: false,
+    razoesDeInelegibilidade: [rules.reasons.consumption],
+  },
+  inelegibleBiConsumption: {
+    elegivel: false,
+    razoesDeInelegibilidade: [rules.reasons.consumption],
+  },
+  inelegibleTriConsumption: {
+    elegivel: false,
+    razoesDeInelegibilidade: [rules.reasons.consumption],
+  },
+};
+
+module.exports = { input, output };
