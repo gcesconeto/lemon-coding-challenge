@@ -1,6 +1,6 @@
-const CheckEligibility = require('../checkEligibility');
-const rules = require('../checkEligibility/rules');
-const { input, output } = require('./testData');
+const CheckEligibility = require('../services/checkEligibility');
+const rules = require('../services/checkEligibility/rules');
+const { input, output } = require('./checkEligibilityData');
 
 const checkEligibility = new CheckEligibility(rules);
 
@@ -11,27 +11,27 @@ describe('Test class clientValidator', () => {
   });
 
   it('Should return false + reason when class is ineligible', () => {
-    expect(checkEligibility.check(input.inelegibleClass))
-      .toEqual(output.inelegibleClass);
+    expect(checkEligibility.check(input.ineligibleClass))
+      .toEqual(output.ineligibleClass);
   });
 
   it('Should return false + reason when billing model is ineligible', () => {
-    expect(checkEligibility.check(input.inelegibleBillingModel))
-      .toEqual(output.inelegibleBillingModel);
+    expect(checkEligibility.check(input.ineligibleBillingModel))
+      .toEqual(output.ineligibleBillingModel);
   });
 
   it('Should return false + reason when monofasic consumption is too low', () => {
-    expect(checkEligibility.check(input.inelegibleMonoConsumption))
-      .toEqual(output.inelegibleMonoConsumption);
+    expect(checkEligibility.check(input.ineligibleMonoConsumption))
+      .toEqual(output.ineligibleMonoConsumption);
   });
 
   it('Should return false + reason when bifasic consumption is too low', () => {
-    expect(checkEligibility.check(input.inelegibleBiConsumption))
-      .toEqual(output.inelegibleBiConsumption);
+    expect(checkEligibility.check(input.ineligibleBiConsumption))
+      .toEqual(output.ineligibleBiConsumption);
   });
 
   it('Should return false + reason when trifasic consumption is too low', () => {
-    expect(checkEligibility.check(input.inelegibleTriConsumption))
-      .toEqual(output.inelegibleTriConsumption);
+    expect(checkEligibility.check(input.ineligibleTriConsumption))
+      .toEqual(output.ineligibleTriConsumption);
   });
 });

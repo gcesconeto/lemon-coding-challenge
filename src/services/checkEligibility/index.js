@@ -41,7 +41,7 @@ class CheckEligibility {
 
   #calculateCO2Savings(input) {
     const savings = average(input.historicoDeConsumo) * 12 * this.data.CO2PerKWh;
-    this.#report.economiaAnualDeCO2 = savings.toFixed(2);
+    this.#report.economiaAnualDeCO2 = savings;
   }
 
   check(input) {

@@ -12,7 +12,7 @@ const enumOf = (values) => ({
   example: values[0],
 });
 
-const input = {
+const inputSchema = {
   type: 'object',
   additionalProperties: false,
   required: [
@@ -40,7 +40,7 @@ const input = {
   },
 };
 
-const output = {
+const outputSchema = {
   oneOf: [
     {
       type: 'object',
@@ -75,6 +75,6 @@ const output = {
 };
 
 module.exports = {
-  input,
-  output,
+  inputSchema,
+  outputSchema,
 };

@@ -11,5 +11,11 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+    "no-unused-vars": [2, {"vars": "all", "argsIgnorePattern": "^_"}],
+    "no-console": 0
+  },
+  "babelOptions": {
+    "configFile": "./.babel-eslintrc"
+ }
 }

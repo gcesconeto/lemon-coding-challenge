@@ -1,4 +1,4 @@
-const rules = require('../checkEligibility/rules');
+const rules = require('../services/checkEligibility/rules');
 
 function populateConsumption(minConsumption, offset) {
   return new Array(12).fill(minConsumption + offset);
@@ -12,35 +12,35 @@ const input = {
     historicoDeConsumo:
       populateConsumption(rules.minConsumption[rules.eligibleConnectionTypes[0]], 1),
   },
-  inelegibleClass: {
+  ineligibleClass: {
     tipoDeConexao: rules.eligibleConnectionTypes[0],
     classeDeConsumo: rules.ineligibleClasses[0],
     modalidadeTarifaria: rules.eligibleBillingModels[0],
     historicoDeConsumo:
       populateConsumption(rules.minConsumption[rules.eligibleConnectionTypes[0]], 1),
   },
-  inelegibleBillingModel: {
+  ineligibleBillingModel: {
     tipoDeConexao: rules.eligibleConnectionTypes[0],
     classeDeConsumo: rules.eligibleClasses[0],
     modalidadeTarifaria: rules.ineligibleBillingModels[0],
     historicoDeConsumo:
       populateConsumption(rules.minConsumption[rules.eligibleConnectionTypes[0]], 1),
   },
-  inelegibleMonoConsumption: {
+  ineligibleMonoConsumption: {
     tipoDeConexao: 'monofasico',
     classeDeConsumo: rules.eligibleClasses[0],
     modalidadeTarifaria: rules.eligibleBillingModels[0],
     historicoDeConsumo:
       populateConsumption(rules.minConsumption.monofasico, -1),
   },
-  inelegibleBiConsumption: {
+  ineligibleBiConsumption: {
     tipoDeConexao: 'bifasico',
     classeDeConsumo: rules.eligibleClasses[0],
     modalidadeTarifaria: rules.eligibleBillingModels[0],
     historicoDeConsumo:
       populateConsumption(rules.minConsumption.bifasico, -1),
   },
-  inelegibleTriConsumption: {
+  ineligibleTriConsumption: {
     tipoDeConexao: 'trifasico',
     classeDeConsumo: rules.eligibleClasses[0],
     modalidadeTarifaria: rules.eligibleBillingModels[0],
@@ -52,25 +52,25 @@ const input = {
 const output = {
   eligible: {
     elegivel: true,
-    economiaAnualDeCO2: '404.21',
+    economiaAnualDeCO2: 404.208,
   },
-  inelegibleClass: {
+  ineligibleClass: {
     elegivel: false,
     razoesDeInelegibilidade: [rules.reasons.class],
   },
-  inelegibleBillingModel: {
+  ineligibleBillingModel: {
     elegivel: false,
     razoesDeInelegibilidade: [rules.reasons.billingModel],
   },
-  inelegibleMonoConsumption: {
+  ineligibleMonoConsumption: {
     elegivel: false,
     razoesDeInelegibilidade: [rules.reasons.consumption],
   },
-  inelegibleBiConsumption: {
+  ineligibleBiConsumption: {
     elegivel: false,
     razoesDeInelegibilidade: [rules.reasons.consumption],
   },
-  inelegibleTriConsumption: {
+  ineligibleTriConsumption: {
     elegivel: false,
     razoesDeInelegibilidade: [rules.reasons.consumption],
   },
