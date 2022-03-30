@@ -9,35 +9,38 @@ The proposal requested an application, preferably using Node.js, capable of dete
 
 These are the main technologies used:
 * Node.js + express for the API.
-* JSONSchema for input and output validation.
+* JSONSchema + Ajv for input and output validation.
 * Jest + supertest for testing.
 * Github Actions for CI.
+* Docker + Heroku for Deploy.
 
 
-## Installation
+## Running the API
 
 ### Pre-requisites:
 * npm with Node.js v14.x +
 ### Setup:
 * Clone the repository https://github.com/gcesconeto/lemon-coding-challenge.
 * Open a terminal window inside the project folder and:
-  * run `npm install`
+  * run `npm install` to install dependencies
+  * run `npm start` to start the server locally on port 3000
 
 ## Using the API
 
-Run `npm start` in the root directory. The only endpoint available is POST `/eligibility`" that receives the client's info and responds with an elegibility report.
+The API is currently hosted at https://peaceful-waters-53352.herokuapp.com
 
-The input data must be a JSON with the following structure:
+To check a client's eligibility send a `POST` request to `/eligibility` endpoint with a JSON body like below:
 
 ```
 {
-  "numeroDoDocumento": "CPF or CNPJ (numbers only)",
+  "numeroDoDocumento": "CPF or CNPJ (string with numbers only)",
   "tipoDeConexao": "monofasico" or "bifasico" or "trifasico",
   "classeDeConsumo": "residencial" or "industrial" or "comercial" or "rural" or "poderPublico",
   "modalidadeTarifaria": "azul" or "branca" or "verde" or "convencional",
   "historicoDeConsumo": [ array of power consumption of the last 3 to 12 months, in kWh ]
 }
 ```
+If the data was sent correctly the API responds with the report. Otherwise an error message will be sent.
 
 ## Tests
 
