@@ -12,7 +12,7 @@ These are the main technologies used:
 * JSONSchema + Ajv for input and output validation.
 * Jest + supertest for testing.
 * Github Actions for CI.
-* Docker + Heroku for Deploy.
+* Docker + Heroku for deploy.
 
 
 ## Running the API
@@ -27,7 +27,7 @@ These are the main technologies used:
 
 ## Using the API
 
-The API is currently hosted at https://peaceful-waters-53352.herokuapp.com
+The API is currently hosted at https://gcesconeto-lemon-challenge.herokuapp.com/
 
 To check a client's eligibility send a `POST` request to `/eligibility` endpoint with a JSON body like below:
 
