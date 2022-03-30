@@ -17,7 +17,7 @@ These are the main technologies used:
 ## Installation
 
 ### Pre-requisites:
-* npm
+* npm with Node.js v14.x +
 ### Setup:
 * Clone the repository https://github.com/gcesconeto/lemon-coding-challenge.
 * Open a terminal window inside the project folder and:
