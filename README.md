@@ -1,4 +1,4 @@
-# Lemon Energia coding challenge
+# Lemon Energia - coding challenge
 
 ## Context
 
@@ -44,7 +44,7 @@ If the data was sent correctly the API responds with the report. Otherwise an er
 
 ## Tests
 
-Tests were created for the eligibility logic as well as the API, they are automatically run on Github Actions on all PRs to master. To run them locally use `npm run test`.
+Tests were created for the eligibility logic as well as the API, they are automatically run on Github Actions on all Pull requests to master. To test locally run `npm test`.
 
 
 ## Contact
