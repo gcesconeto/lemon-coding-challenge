@@ -6,7 +6,7 @@ function populateConsumption(minConsumption, offset) {
 
 const input = {
   eligible: {
-    numeroDoDocumento: '140417377067',
+    numeroDoDocumento: '14041737706',
     tipoDeConexao: rules.eligibleConnectionTypes[0],
     classeDeConsumo: rules.eligibleClasses[0],
     modalidadeTarifaria: rules.eligibleBillingModels[0],
