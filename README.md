@@ -11,6 +11,7 @@ These are the main technologies used:
 * Node.js + express for the API.
 * JSONSchema for input and output validation.
 * Jest + supertest for testing.
+* Github Actions for CI.
 
 
 ## Installation
@@ -40,7 +41,7 @@ The input data must be a JSON with the following structure:
 
 ## Tests
 
-Tests were created for the eligibility logic as well as the API, to run them use `npm run test`.
+Tests were created for the eligibility logic as well as the API, they are automatically run on Github Actions on all PRs to master. To run them locally use `npm run test`.
 
 
 ## Contact
