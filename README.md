@@ -51,3 +51,4 @@ Tests were created for the eligibility logic as well as the API, they are automa
 
 * Guilherme Cesconeto
 * [`Github`](https://github.com/gcesconeto)
+* [`LinkedIn`](https://www.linkedin.com/in/cesconeto/)
