@@ -17,14 +17,28 @@ describe('POST `/eligibility`', () => {
     expect(validateOutput(response.body)).toBe(true);
   });
 
-  it('Should receive status 200 and eligibility: false', async () => {
+  it('Should receive status 200 and eligibility false when document in invalid', async () => {
+    const response = await request(app).post('/eligibility').send(input.ineligibleDocument);
+    expect(response.status).toBe(OK);
+    expect(response.body).toEqual(output.ineligibleDocument);
+    expect(validateOutput(response.body)).toBe(true);
+  });
+
+  it('Should receive status 200 and eligibility false when subclass is invalid', async () => {
+    const response = await request(app).post('/eligibility').send(input.ineligibleSubClass);
+    expect(response.status).toBe(OK);
+    expect(response.body).toEqual(output.ineligibleSubClass);
+    expect(validateOutput(response.body)).toBe(true);
+  });
+
+  it('Should receive status 200 and eligibility false when class, billing model and consumption are invalid', async () => {
     const response = await request(app).post('/eligibility').send(input.ineligible);
     expect(response.status).toBe(OK);
     expect(response.body).toEqual(output.ineligible);
     expect(validateOutput(response.body)).toBe(true);
   });
 
-  it('Should receive status 422 and error message', async () => {
+  it('Should receive status 422 and error message when input data is malformed', async () => {
     const response = await request(app).post('/eligibility').send(input.wrongFormat);
     expect(response.status).toBe(UNPROCESSABLE_ENTITY);
     expect(response.body.message.error).toBeDefined();

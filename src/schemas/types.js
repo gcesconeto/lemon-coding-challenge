@@ -20,6 +20,20 @@ const classesDeConsumo = [
   'poderPublico',
 ];
 
+const subclassesDeConsumo = [
+  'administracaoCondominial',
+  'agropecuariaRural',
+  'baixaRenda',
+  'comercial',
+  'industrial',
+  'poderPublicoEstadual',
+  'poderPublicoMunicipal',
+  'residencial',
+  'servicosDeTelecomunicacao',
+  'servicosDeTransporte',
+  'templosReligiosos',
+];
+
 const modalidadesTarifarias = ['azul', 'branca', 'verde', 'convencional'];
 
 module.exports = {
@@ -27,5 +41,6 @@ module.exports = {
   cnpj,
   tiposDeConexao,
   classesDeConsumo,
+  subclassesDeConsumo,
   modalidadesTarifarias,
 };

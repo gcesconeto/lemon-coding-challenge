@@ -10,9 +10,24 @@ describe('Test class clientValidator', () => {
       .toEqual(output.eligible);
   });
 
+  it('Should return false + reason when document is invalid', () => {
+    expect(checkEligibility.check(input.ineligibleDocument))
+      .toEqual(output.ineligibleDocument);
+  });
+
   it('Should return false + reason when class is ineligible', () => {
     expect(checkEligibility.check(input.ineligibleClass))
       .toEqual(output.ineligibleClass);
+  });
+
+  it('Should return false + reason when subclass is ineligible', () => {
+    expect(checkEligibility.check(input.ineligibleSubClass))
+      .toEqual(output.ineligibleSubClass);
+  });
+
+  it('Should return false + reason when subclass is not from class', () => {
+    expect(checkEligibility.check(input.subClassNotInClass))
+      .toEqual(output.subClassNotInClass);
   });
 
   it('Should return false + reason when billing model is ineligible', () => {
