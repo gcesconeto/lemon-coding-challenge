@@ -31,9 +31,22 @@ The input data must be a JSON with the following structure:
 
 ```
 {
-  "numeroDoDocumento": "CPF or CNPJ (numbers only)",
+  "numeroDoDocumento": "Valid CPF or CNPJ (numbers only)",
   "tipoDeConexao": "monofasico" or "bifasico" or "trifasico",
   "classeDeConsumo": "residencial" or "industrial" or "comercial" or "rural" or "poderPublico",
+  "subclasseDeConsumo": one string of the following [
+    "administracaoCondominial",
+    "agropecuariaRural",
+    "baixaRenda",
+    "comercial",
+    "industrial",
+    "poderPublicoEstadual",
+    "poderPublicoMunicipal",
+    "residencial",
+    "servicosDeTelecomunicacao",
+    "servicosDeTransporte",
+    "templosReligiosos",
+  ]
   "modalidadeTarifaria": "azul" or "branca" or "verde" or "convencional",
   "historicoDeConsumo": [ array of power consumption of the last 3 to 12 months, in kWh ]
 }

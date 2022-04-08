@@ -41,7 +41,7 @@ describe('POST `/eligibility`', () => {
   it('Should receive status 422 and error message when input data is malformed', async () => {
     const response = await request(app).post('/eligibility').send(input.wrongFormat);
     expect(response.status).toBe(UNPROCESSABLE_ENTITY);
-    expect(response.body.message.error).toBeDefined();
-    expect(response.body.message.params).toBeDefined();
+    expect(response.body.message[0].error).toBeDefined();
+    expect(response.body.message[0].params).toBeDefined();
   });
 });
