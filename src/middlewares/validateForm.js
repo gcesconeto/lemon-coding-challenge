@@ -6,17 +6,22 @@ const { inputSchema } = require('../schemas/io');
 const ajv = new Ajv({ strict: false });
 const validateForm = ajv.compile(inputSchema);
 
-module.exports = (req, res, next) => {
+module.exports = (req, _res, next) => {
   const input = req.body;
 
   if (!validateForm(input)) {
     const err = {
       status: UNPROCESSABLE_ENTITY,
-      message: {
-        error: validateForm.errors[0].message,
-        params: validateForm.errors[0].params,
-      },
+      message: [],
     };
+    validateForm.errors.forEach((error) => {
+      err.message.push(
+        {
+          error: error.message,
+          params: error.params,
+        },
+      );
+    });
     return next(err);
   }
   return next();
