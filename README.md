@@ -1,4 +1,4 @@
-# Lemon Energia coding challenge
+# Lemon Energia - coding challenge
 
 ## Context
 
@@ -9,25 +9,27 @@ The proposal requested an application, preferably using Node.js, capable of dete
 
 These are the main technologies used:
 * Node.js + express for the API.
-* JSONSchema for input and output validation.
+* JSONSchema + Ajv for input and output validation.
 * Jest + supertest for testing.
 * Github Actions for CI.
+* Docker + Heroku for deploy.
 
 
-## Installation
+## Running the API
 
 ### Pre-requisites:
 * npm with Node.js v14.x +
 ### Setup:
 * Clone the repository https://github.com/gcesconeto/lemon-coding-challenge.
 * Open a terminal window inside the project folder and:
-  * run `npm install`
+  * run `npm install` to install dependencies
+  * run `npm start` to start the server locally on port 3000
 
 ## Using the API
 
-Run `npm start` in the root directory. The only endpoint available is POST `/eligibility`" that receives the client's info and responds with an elegibility report.
+The API is currently hosted at https://gcesconeto-lemon-challenge.herokuapp.com/
 
-The input data must be a JSON with the following structure:
+To check a client's eligibility send a `POST` request to `/eligibility` endpoint with a JSON body like below:
 
 ```
 {
@@ -51,13 +53,15 @@ The input data must be a JSON with the following structure:
   "historicoDeConsumo": [ array of power consumption of the last 3 to 12 months, in kWh ]
 }
 ```
+If the data was sent correctly the API responds with the report. Otherwise an error message will be sent.
 
 ## Tests
 
-Tests were created for the eligibility logic as well as the API, they are automatically run on Github Actions on all PRs to master. To run them locally use `npm run test`.
+Tests were created for the eligibility logic as well as the API, they are automatically run on Github Actions on all Pull requests to master. To test locally run `npm test`.
 
 
 ## Contact
 
 * Guilherme Cesconeto
 * [`Github`](https://github.com/gcesconeto)
+* [`LinkedIn`](https://www.linkedin.com/in/cesconeto/)
